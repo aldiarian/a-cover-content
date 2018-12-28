@@ -1,0 +1,26 @@
+@mixin ue-c-cover-content--highlighted {
+    .ue-c-cover-content--highlighted {
+        background: #5689a9;
+        color: white;
+        .ue-c-cover-content {
+            &__link {
+                text-decoration: none;
+                display: block;
+                color: white;
+                &:hover {
+                    color: whitesmoke;
+                    &:before {
+                        background: rgba(0,0,0,0.05)
+                    }
+
+                }
+            }
+            &__kicker {
+                color: #b3dde6;
+            }
+            &__byline-location {
+                color: whitesmoke;
+            }
+        }
+    }
+}

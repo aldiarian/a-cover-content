@@ -1,0 +1,68 @@
+@import "~styles-commons-utilities/scss/main";
+
+@import 'utilities';
+@import 'variables';
+
+
+// **********************************************
+// default
+// **********************************************
+@import 'ue-c-cover-content';
+
+
+// **********************************************
+// display variations
+// **********************************************
+@import 'display/ue-c-cover-content--footer-left';
+@import 'display/ue-c-cover-content--footer-right';
+@import 'display/ue-c-cover-content--footer1of2';
+@import 'display/ue-c-cover-content--footer1of3';
+@import 'display/ue-c-cover-content--media-left';
+@import 'display/ue-c-cover-content--media-right';
+@import 'display/ue-c-cover-content--media1of2';
+@import 'display/ue-c-cover-content--media1of4';
+@import 'display/ue-c-cover-content--media2of3';
+@import "display/ue-c-cover-content--media-align-bottom";
+@import 'display/ue-c-cover-content--link-grow-200';
+@import 'display/ue-c-cover-content--link-grow-300';
+@import 'display/ue-c-cover-content--vertical';
+@import 'display/ue-c-cover-content--vertical-reverse';
+@import 'display/ue-c-cover-content--main-over';
+@import "display/ue-c-cover-content--2cols-related-links";
+@import "display/ue-c-cover-content--3cols-related-links";
+@import "display/ue-c-cover-content--hasimage-1col-related-links";
+@import "display/ue-c-cover-content--kicker-left";
+@import "display/ue-c-cover-content--kicker-right";
+
+
+// **********************************************
+// sizes variations
+// **********************************************
+@import 'sizes/ue-c-cover-content--3xs';
+@import 'sizes/ue-c-cover-content--xxs';
+@import 'sizes/ue-c-cover-content--xs';
+@import 'sizes/ue-c-cover-content--s';
+@import 'sizes/ue-c-cover-content--m';
+@import 'sizes/ue-c-cover-content--l';
+@import 'sizes/ue-c-cover-content--xl';
+@import 'sizes/ue-c-cover-content--xxl';
+@import 'sizes/ue-c-cover-content--3xl';
+@import 'sizes/ue-c-cover-content--4xl';
+@import 'sizes/ue-c-cover-content--media-icon-l';
+@import 'sizes/ue-c-cover-content--media-icon-m';
+
+// **********************************************
+// styles variations
+// **********************************************
+@import 'styles/ue-c-cover-content--highlighted';
+@import 'styles/ue-c-cover-content--inverted';
+@import 'styles/ue-c-cover-content--is-special';
+@import 'styles/ue-c-cover-content--is-opinion';
+@import 'styles/ue-c-cover-content--is-gallery';
+@import 'styles/ue-c-cover-content--is-graph';
+@import 'styles/ue-c-cover-content--is-branded';
+@import 'styles/ue-c-cover-content--is-video';
+@import 'styles/ue-c-cover-content--is-special';
+@import "styles/ue-c-cover-content--is-bt-module";
+
+

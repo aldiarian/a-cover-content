@@ -1,0 +1,84 @@
+@mixin ue-c-cover-content--is-opinion ($in-block: false) {
+    .ue-c-cover-content--is-opinion {
+        .ue-c-cover-content {
+            &__body {
+                color: get-property($ue-c-cover-content-opinion, body, color);
+                @if $ue-c-cover-content-opinion-background {
+                    background: get-property($ue-c-cover-content-opinion, body, background-color);
+                }
+            }
+            &__headline-group {
+                font-style: $ue-c-cover-content-opinion-font-style;
+            }
+            &__link {
+                &:link,
+                &:visited {
+                    color: get-property($ue-c-cover-content-opinion, link, color);
+                }
+                @include mq($from: tablet) {
+                    &:visited {
+                        color: $ue-c-cover-content-link-color-visited;
+                    }
+                }
+                &:hover {
+                    color: get-property($ue-c-cover-content-opinion, link, color-hover);
+                    .ue-c-cover-content__related-link-kicker {
+                        color: get-property($ue-c-cover-content-opinion, link, color-hover);
+                    }
+                }
+                &:active {
+                    color: get-state-color(get-property($ue-c-cover-content-opinion, link, color-hover), $state: 'active');
+                    .ue-c-cover-content__related-link-kicker {
+                        color: get-state-color(get-property($ue-c-cover-content-opinion, link, color-hover), $state: 'active');
+                    }
+                }
+            }
+        }
+        @if $in-block {
+            &-in-block {
+                .ue-c-cover-content {
+                    &__body {
+                        color: get-property($ue-c-cover-content-opinion, body, color);
+                        @if $ue-c-cover-content-opinion-background {
+                            background: get-property($ue-c-cover-content-opinion, body, background-color-in-block);
+                        }
+                    }
+                    &__media {
+                        padding-top: get-cover-content-gutter(mobile);
+                        @include get-border-properties($ue-c-cover-content-border, top);
+                        justify-content: flex-end;
+                    }
+                    &__link {
+                        &:before {
+                            content: "\201C";
+                            position: relative;
+                            float: left;
+                        }
+                        &:link,
+                        &:visited {
+                            color: get-property($ue-c-cover-content-opinion, link, color);
+                        }
+                        @include mq($from: tablet) {
+                            &:visited {
+                                color: $ue-c-cover-content-link-color-visited;
+                            }
+                        }
+                        &:hover {
+                            color: get-property($ue-c-cover-content-opinion, link, color-hover);
+                            .ue-c-cover-content__related-link-kicker {
+                                color: get-property($ue-c-cover-content-opinion, link, color-hover);
+                            }
+                        }
+                        &:active {
+                            color: get-state-color(get-property($ue-c-cover-content-opinion, link, color-hover), $state: 'active');
+                            .ue-c-cover-content__related-link-kicker {
+                                color: get-state-color(get-property($ue-c-cover-content-opinion, link, color-hover), $state: 'active');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

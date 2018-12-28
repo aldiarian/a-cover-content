@@ -1,0 +1,119 @@
+<article class="ue-c-cover-content {{size-class}} {{display-class}} {{style-class}} {{classes}} {{setClasses comments relatedLinks image bt}}" aria-label=".">
+    <div class="ue-c-cover-content__body">
+        {{#if image}}
+                <div class="ue-c-cover-content__media">
+                    <figure class="ue-c-cover-content__figure">
+                        <img class="ue-c-cover-content__image" src="{{image}}" alt="texto alternativo" >
+                        {{#if imageDescription}}
+                            <figcaption class="ue-c-cover-content__caption" >
+                                <span class="ue-c-cover-content__media-description">{{imageDescription}}</span>
+                                {{#if imageSource}}
+                                    <span class="ue-c-cover-content__media-source">
+                                        <span itemprop="name">{{imageSource}}</span>
+                                    </span>
+                                {{/if}}
+                            </figcaption>
+                        {{else if imageSource}}
+                            <figcaption class="ue-c-cover-content__caption" >
+                                <span class="ue-c-cover-content__media-source">
+                                    <span itemprop="name">{{imageSource}}</span>
+                                </span>
+                            </figcaption>
+                        {{/if}}
+                        {{#if multimedia.isVideo}}
+                        <div class="ue-c-cover-content__media-icon">
+                            {{> icon_video}}
+                        </div>
+                        {{else if multimedia.isAlbum}}
+                        <div class="ue-c-cover-content__media-icon">
+                            {{> icon_gallery}}
+                        </div>
+                        {{else if multimedia.isGraph}}
+                        <div class="ue-c-cover-content__media-icon">
+                            {{> icon_graph}}
+                        </div>
+                        {{else if multimedia.isAudio}}
+                        <div class="ue-c-cover-content__media-icon">
+                            {{> icon_audio}}
+                        </div>
+                        {{/if}}
+                    </figure>
+                </div>
+        {{/if}}
+        <div class="ue-c-cover-content__main">
+            {{#if aboveheadline}}
+                <span class="ue-c-cover-content__aboveheadline">{{aboveheadline}}</span>
+            {{/if}}
+            <h2 class="ue-c-cover-content__headline-group">
+                <a class="ue-c-cover-content__link" href="#articleURL">
+                    {{#if kicker}}
+                        <span class="ue-c-cover-content__kicker">{{kicker}}</span>
+                    {{/if}}
+                    <span class="ue-c-cover-content__headline">{{headline}}</span>
+                </a>
+            </h2>
+            <div class="ue-c-cover-content__list-inline">
+                {{#if byline}}
+                    <ul class="ue-c-cover-content__byline-list" >
+                        {{#each byline}}
+                            <li class="ue-c-cover-content__byline-item" >
+                                {{#if name}}
+                                    <span class="ue-c-cover-content__byline-name"><span class="hidden-content">Redacción: </span>{{name}}</span>
+                                {{/if}}
+                                {{#if role}}
+                                    <span class="ue-c-cover-content__byline-role">({{role}})</span>
+                                {{/if}}
+                                {{#if location}}
+                                    <span class="ue-c-cover-content__byline-location">{{location}}</span>
+                                {{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                {{#if publishedDate}}
+                    <div class="ue-c-cover-content__published-date">
+                        <span aria-hidden="true">{{publishedDate}} | {{publishedTime}}</span>
+                        <span class="hidden-content">Noticia actualizada hace 11 minutos</span>
+                    </div>
+                {{/if}}
+                {{#if comments}}
+                    <ul class="ue-c-cover-content__meta">
+                        <!--<li class="ue-c-cover-content__meta-item">
+                            <a href="#commentsurl" class="ue-c-cover-content__section">
+                                <span>España</span>
+                            </a>
+                        </li>-->
+                        <li class="ue-c-cover-content__meta-item">
+                            <a href="#commentsurl" class="ue-c-cover-content__comments">
+                                <span>{{comments}}<span class="hidden-content"> comentarios</span></span>
+                            </a>
+                        </li>
+                    </ul>
+                {{/if}}
+            </div>
+            {{#unless mobile}}
+                {{#if standfirst}}
+                    <p class="ue-c-cover-content__standfirst">{{standfirst}}</p>
+                {{/if}}
+            {{/unless}}
+            {{#if bt}}
+                <div class="ue-c-cover-content__bt-link" >
+                    <a href="{{bt.url}}" title="{{bt.alt}}">
+                        {{> bt-icons}}
+                    </a>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    {{#if relatedLinks}}
+        <div class="ue-c-cover-content__footer">
+            <ul class="ue-c-cover-content__related-links" aria-label="Noticias relacionadas">
+                {{#each relatedLinks}}
+                    <li class="ue-c-cover-content__related-link">
+                        <a href="#relatedlinksurl">{{#if kicker}}<span class="ue-c-cover-content__related-link-kicker">{{kicker}} </span>{{/if}}{{title}}</a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/if}}
+</article>

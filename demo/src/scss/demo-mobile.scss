@@ -1,0 +1,75 @@
+@import 'demo-variables';
+@import '~main';
+
+@include hidden-content;
+$fuente-one: Arial,
+Helvetica,
+sans-serif;
+
+@include ue-c-cover-content;
+
+/*Final display modificators*/
+@include ue-c-cover-content--vertical-reverse(mobile tablet);
+@include ue-c-cover-content--vertical(mobile tablet);
+
+// @include ue-c-cover-content--media2of3-right;
+// @include ue-c-cover-content--media2of3-left;
+// @include ue-c-cover-content--media1of2-right;
+// @include ue-c-cover-content--media1of2-left;
+// @include ue-c-cover-content--media2of5-right;
+// @include ue-c-cover-content--media2of5-left;
+
+
+
+/*MEDIA WIDTH*/
+@include ue-c-cover-content--media2of3(phablet desktop);
+@include ue-c-cover-content--media1of2(phablet);
+
+/*MEDIA POSITION*/
+@include ue-c-cover-content--media-right(phablet);
+@include ue-c-cover-content--media-left(phablet);
+
+/*FOOTER WIDTH*/
+@include ue-c-cover-content--footer1of3(desktop);
+@include ue-c-cover-content--footer1of2(desktop);
+
+/*FOOTER POSITION*/
+@include ue-c-cover-content--footer-left(desktop);
+@include ue-c-cover-content--footer-right(desktop);
+
+/*LINK GROW*/
+@include ue-c-cover-content--link-grow-300(desktop);
+@include ue-c-cover-content--link-grow-200(desktop);
+
+@include ue-c-cover-content--main-over(tablet);
+
+@include ue-c-cover-content--kicker-right;
+
+@include ue-c-cover-content--media-icon-m(tablet);
+@include ue-c-cover-content--media-icon-l(tablet);
+
+@include ue-c-cover-content--3cols-related-links(tablet desktop);
+
+@include ue-c-cover-content--vertical(mobile);
+
+
+@include ue-c-cover-content--3xs(mobile);
+@include ue-c-cover-content--xxs(mobile);
+@include ue-c-cover-content--xs(mobile);
+@include ue-c-cover-content--s(mobile);
+@include ue-c-cover-content--m(mobile);
+@include ue-c-cover-content--xl(mobile);
+@include ue-c-cover-content--xxl(mobile);
+@include ue-c-cover-content--xxl(phablet);
+@include ue-c-cover-content--3xl(phablet);
+@include ue-c-cover-content--m(tablet);
+@include ue-c-cover-content--l(tablet);
+@include ue-c-cover-content--xl(tablet);
+@include ue-c-cover-content--xxl(tablet);
+@include ue-c-cover-content--3xl(tablet);
+@include ue-c-cover-content--4xl(tablet desktop);
+
+@include ue-c-cover-content--highlighted;
+@include ue-c-cover-content--inverted;
+@include ue-c-cover-content--is-opinion;
+@include ue-c-cover-content--is-special;

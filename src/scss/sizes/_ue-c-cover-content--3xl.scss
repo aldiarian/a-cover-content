@@ -1,0 +1,15 @@
+@mixin ue-c-cover-content--3xl($sizeFrom: tablet) {
+    @each $mediaq, $value in $sizeFrom {
+        .ue-c-cover-content--3xl-from-#{$mediaq} {
+            @include mq($mediaq) {
+                .ue-c-cover-content {
+                    &__headline-group {
+                        font-size: get-font-size($ue-c-cover-content-font-scale, headline, 3xl);
+                        line-height: get-line-height($ue-c-cover-content-font-scale, headline, 3xl);
+                        letter-spacing: get-letter-spacing($ue-c-cover-content-font-scale, headline, 3xl);
+                    }
+                }
+            }
+        }
+    }
+}

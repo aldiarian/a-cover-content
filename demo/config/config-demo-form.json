@@ -1,0 +1,60 @@
+{
+    "name": "ue-c-cover-content",
+    "viewport": {
+        "name": "viewport",
+        "options": [
+            "320",
+            "360",
+            "375",
+            "660",
+            "740",
+            "990",
+            "1140",
+            "1200"
+        ]
+    },
+    "sizes":{
+        "name": "size-class",
+        "options":[
+            "ue-c-cover-content--3xs-from-mobile",
+            "ue-c-cover-content--xxs-from-mobile ",
+            "ue-c-cover-content--xs-from-mobile",
+            "ue-c-cover-content--s-from-mobile",
+            "ue-c-cover-content--m-from-mobile",
+            "ue-c-cover-content--l-from-tablet",
+            "ue-c-cover-content--xl-from-mobile",
+            "ue-c-cover-content--xxl-from-mobile",
+            "ue-c-cover-content--3xl-from-tablet",
+            "ue-c-cover-content--4xl-from-tablet",
+            "ue-c-cover-content--xl-from-mobile ue-c-cover-content--xxl-from-tablet",
+            "ue-c-cover-content--xxl-from-mobile ue-c-cover-content--3xl-from-tablet",
+            "ue-c-cover-content--xxl-from-mobile ue-c-cover-content--3xl-from-tablet ue-c-cover-content--4xl-from-desktop",
+            "ue-c-cover-content--s-from-mobile ue-c-cover-content--3xl-from-phablet ue-c-cover-content--xxl-from-tablet ue-c-cover-content--4xl-from-desktop"
+        ]
+    },
+    "display":{
+        "name": "display-class",
+        "options":[
+            "default",
+            "ue-c-cover-content--main-over-from-tablet",
+            "ue-c-cover-content--vertical-from-mobile",
+            "ue-c-cover-content--vertical-reverse-from-mobile",
+            "ue-c-cover-content--vertical-reverse-from-mobile ue-c-cover-content--media2of3-from-phablet ue-c-cover-content--media-right-from-phablet ue-c-cover-content--footer1of3-from-desktop ue-c-cover-content--footer-left-from-desktop ue-c-cover-content--link-grow-300-from-desktop",
+            "ue-c-cover-content--vertical-reverse-from-mobile ue-c-cover-content--media2of3-from-phablet ue-c-cover-content--media-left-from-phablet ue-c-cover-content--footer1of3-from-desktop ue-c-cover-content--footer-right-from-desktop",
+            "ue-c-cover-content--vertical-reverse-from-mobile ue-c-cover-content--media1of2-from-phablet ue-c-cover-content--media-right-from-phablet ue-c-cover-content--footer1of2-from-desktop ue-c-cover-content--footer-left-from-desktop ue-c-cover-content__related-links--2col ue-c-cover-content--link-grow-200-from-desktop",
+            "ue-c-cover-content--vertical-reverse-from-mobile ue-c-cover-content--media1of2-from-phablet ue-c-cover-content--media-left-from-phablet ue-c-cover-content--footer1of2-from-desktop ue-c-cover-content--footer-right-from-desktop ue-c-cover-content__related-links--2col"
+        ]
+    },
+    "styles": {
+        "name": "style-class",
+        "options":[
+            "",
+            "ue-c-cover-content--highlighted",
+            "ue-c-cover-content--opinion",
+            "ue-c-cover-content--special"
+        ]
+    },
+    "elements":[
+        
+    ]
+}

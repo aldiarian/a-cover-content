@@ -1,0 +1,22 @@
+@mixin ue-c-cover-content--is-bt-module {
+    .ue-c-cover-content--is-bt-module {
+        .ue-c-cover-content {
+            &__bt-link {
+                display: flex;
+                flex-grow: 1;
+                align-items: flex-end;
+                a {
+                    z-index: 3;
+                    height: 1em;
+                    @include mq(desktop) {
+                        height: 1.3125em;
+                    }
+                }
+                svg {
+                    max-height: 100%;
+                }
+            }
+        }
+
+    }
+}

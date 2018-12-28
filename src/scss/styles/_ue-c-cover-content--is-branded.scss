@@ -1,0 +1,38 @@
+@mixin ue-c-cover-content--is-branded {
+    .ue-c-cover-content--is-branded {
+        background: $ue-c-cover-content-branded-background-color;
+        @include get-border-properties($ue-c-cover-content-branded-border, bottom);
+        .ue-c-cover-content {
+            &__link {
+                color: $ue-c-cover-content-branded-font-color;
+
+                &:hover {
+                    color: $ue-c-cover-content-branded-font-color-hover;
+                }
+            }
+
+            &__kicker {
+                color: $ue-c-cover-content-branded--kicker-font-color;
+            }
+
+            &__aboveheadline {
+                color: $ue-c-cover-content-branded-font-color;
+            }
+
+            &__standfirst {
+                color: $ue-c-cover-content-branded-font-color;
+            }
+
+            &__byline-item {
+                color: $ue-c-cover-content-branded-font-color;
+            }
+
+            &__byline-location {
+                color: $ue-c-cover-content-branded-font-color;
+            }
+            &__main {
+                @include get-border-properties($ue-c-cover-content-branded-border, top);
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@mixin ue-c-cover-content--footer1of3 ($absoluteFrom: desktop) {
+    @each $mediaq, $value in $absoluteFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--footer1of3-from-#{$mediaq} {
+                &.has-image {
+                    .ue-c-cover-content {
+                        &__footer {
+                            width: calc(100% / 3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

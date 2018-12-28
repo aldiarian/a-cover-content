@@ -1,0 +1,24 @@
+@mixin ue-c-cover-content--vertical ($displayFrom: tablet) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--vertical-from-#{$mediaq} { 
+                .ue-c-cover-content {
+                    &__body {
+                        flex-direction: column;
+                    }
+                    &__media {
+                        width: 100%;
+                        height: auto;
+                    }
+                    &__main {
+                        width: 100%;
+                        border-top: 0;
+                        @if $ue-c-cover-content--boxed-content == false {
+                            padding: get-cover-content-gutter(mobile) 0 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

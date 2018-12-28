@@ -1,0 +1,17 @@
+// **********************************************
+// Cover content media takes 2 thirds of the space
+// **********************************************
+
+@mixin ue-c-cover-content--media2of3($displayFrom: phablet) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--media2of3-from-#{$mediaq} { 
+                .ue-c-cover-content {
+                    &__media {
+                        width: calc(100% / 3 * 2 - #{$ue-c-cover-content-grid-gutter} / 2);
+                    }
+                }
+            }
+        }
+    }
+}

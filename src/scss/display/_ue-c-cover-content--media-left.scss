@@ -1,0 +1,32 @@
+// **********************************************
+// Cover content media displays at the left.
+// If it has-image and related links then the standfirst aligns at the start
+// **********************************************
+
+@mixin ue-c-cover-content--media-left ($displayFrom: phablet) {
+     @each $mediaq, $value in $displayFrom {
+        .ue-c-cover-content--media-left-from-#{$mediaq} {
+            @include mq($mediaq) {
+                .ue-c-cover-content {
+                    &__body {
+                        flex-direction: row;
+                    }
+                    &__main {
+                        @if $ue-c-cover-content--boxed-content==false {
+                            padding: 0 0 0 get-cover-content-gutter(mobile);
+                        }
+                    }
+                }
+            }
+            &.has-image {
+                &.has-related-links {
+                    .ue-c-cover-content {
+                        &__standfirst {
+                            align-items: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

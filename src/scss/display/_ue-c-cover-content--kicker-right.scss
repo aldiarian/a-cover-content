@@ -1,0 +1,27 @@
+// **********************************************
+// Cover kicker displays absolute at the right top corner (if is has image).
+// **********************************************
+
+@mixin ue-c-cover-content--kicker-right($displayFrom: mobile) {
+    @if $ue-c-cover-content-kicker-position == 0 {
+        @each $mediaq, $value in $displayFrom {
+            @include mq($mediaq) {
+                .ue-c-cover-content--kicker-right-from-#{$mediaq} {
+                    &.has-image {
+                        .ue-c-cover-content {
+                            &__kicker {
+                                position: absolute;
+                                margin: 0;
+                                top: 0;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @else {
+        @warn "If you want to use the 'ue-c-cover-content--kicker-right' modificator, make sure you set the '$ue-c-cover-content-kicker-position to 0'";
+    }
+}

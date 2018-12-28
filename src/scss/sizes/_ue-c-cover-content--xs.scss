@@ -1,0 +1,25 @@
+@mixin ue-c-cover-content--xs($sizeFrom: mobile) {
+    @each $mediaq, $value in $sizeFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--xs-from-#{$mediaq} {
+                .ue-c-cover-content {
+                    &__headline-group {
+                        font-size:  get-font-size($ue-c-cover-content-font-scale, headline, xs);
+                        line-height: get-line-height($ue-c-cover-content-font-scale, headline, xs);
+                        letter-spacing: get-letter-spacing($ue-c-cover-content-font-scale, headline, xs);
+                    }
+                }
+
+                // &.has-image {
+                //     .ue-c-cover-content {
+                //         &__headline-group {
+                //             font-size:  get-font-size($ue-c-cover-content-font-scale, headline, xs);
+                //             line-height: get-line-height($ue-c-cover-content-font-scale, headline, xs);
+                //             letter-spacing: get-letter-spacing($ue-c-cover-content-font-scale, headline, xs);
+                //         }
+                //     }
+                // }
+            }
+        }
+    }
+}

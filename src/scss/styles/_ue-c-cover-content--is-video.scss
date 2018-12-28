@@ -1,0 +1,16 @@
+@mixin ue-c-cover-content--is-video {
+    .ue-c-cover-content--is-video {
+        &.has-image {
+            .ue-c-cover-content {
+                &__figure {
+                    //content: url(../images/play-button-grey.svg);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    z-index: 1;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}

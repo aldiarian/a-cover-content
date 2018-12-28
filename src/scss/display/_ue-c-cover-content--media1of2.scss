@@ -1,0 +1,17 @@
+// **********************************************
+// Cover content media takes half of the space
+// **********************************************
+
+@mixin ue-c-cover-content--media1of2($displayFrom: tablet) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--media1of2-from-#{$mediaq} {
+                .ue-c-cover-content {
+                    &__media {
+                        width: calc(50% - #{$ue-c-cover-content-grid-gutter} / 2);
+                    }
+                }
+            }
+        }
+    }
+}

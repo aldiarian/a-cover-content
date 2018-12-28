@@ -1,0 +1,16 @@
+@mixin ue-c-cover-content--hasimage-1col-related-links($displayFrom: desktop) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--hasimage-1col-related-links-from-#{$mediaq} {
+                &.has-image {
+                    .ue-c-cover-content {
+                        &__related-link {
+                            width: 100%;
+                            margin-top: get-cover-content-gutter(mobile)/2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@mixin ue-c-cover-content--footer-right($absoluteFrom: desktop) {
+    @each $mediaq, $value in $absoluteFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--footer-right-from-#{$mediaq} {
+                &.has-image {
+                    .ue-c-cover-content {
+                        &__footer {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            @if $ue-c-cover-content--boxed-content==false {
+                                padding: 0 0 0 get-cover-content-gutter(mobile);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

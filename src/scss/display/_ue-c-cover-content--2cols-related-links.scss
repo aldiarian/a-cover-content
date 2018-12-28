@@ -1,0 +1,17 @@
+@mixin ue-c-cover-content--2cols-related-links($displayFrom: desktop) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--2cols-related-links-from-#{$mediaq} {
+                .ue-c-cover-content{
+                    &__related-link {
+                        width: 50%;
+                        flex-grow: 1;
+                        &:nth-child(-n+2) {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

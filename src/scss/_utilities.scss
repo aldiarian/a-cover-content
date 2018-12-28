@@ -1,0 +1,67 @@
+@function get-font-size($font-scale, $name, $font-level) {
+    @return px-rem(map-get(map-get(map-get($font-scale, $name), $font-level), font-size));
+}
+@function get-line-height($font-scale, $name, $font-level) {
+    @return px-rem(map-get(map-get(map-get($font-scale, $name), $font-level), line-height));
+}
+@function get-letter-spacing($font-scale, $name, $font-level) {
+    @return px-rem(map-get(map-get(map-get($font-scale, $name), $font-level), letter-spacing));
+}
+
+@function get-grid-space($gutter-scale-level) {
+    @return px-rem(map-get(map-get($gutter-scale, $gutter-scale-level), grid-space));
+}
+@function need-different-grid-space($gutter-scale-level) {
+    @return map-get(map-get($gutter-scale, $gutter-scale-level), create);
+}
+
+@function get-font-family($variable-map, $element) {
+    @return map-get(map-get($variable-map, $element), font-family);
+}
+@function get-font-weight($variable-map, $element) {
+    @return map-get(map-get($variable-map, $element), font-weight);
+}
+@function get-font-color($variable-map, $element) {
+    @return map-get(map-get($variable-map, $element), color);
+}
+@function get-font-color-hover($variable-map, $element) {
+    @return map-get(map-get($variable-map, $element), color-hover);
+}
+
+@function get-cover-content-gutter($gutter-scale-mq) {
+    @return px-rem(map-get(map-get($ue-c-cover-content-gutter-scale, $gutter-scale-mq), gutter));
+}
+
+@function get-cover-content-media-icon-size($size) {
+    @return px-rem(map-get(map-get($ue-c-cover-content-media-icon-size, $size), width));
+}
+
+@mixin get-border-properties($map-variable, $side) {
+    @if map-get(map-get($map-variable, $side), create) {
+       border-#{$side}: map-get(map-get($map-variable, $side), border-width) map-get(map-get($map-variable, $side), border-style) map-get(map-get($map-variable, $side), border-color);
+    }
+}
+// Get property from css map
+// @param $variable-name - $ue-c-article-font-families
+// @param $element-name - kicker
+// @param $property - color
+@function get-property($variable-name, $element-name, $property) {
+    @return map-get($map: map-get($map: $variable-name, $key: $element-name), $key: $property);
+}
+
+// Slightly darken a color
+// @param $color - color to shade
+// @param $percentage - percentage of `$color` in returned color
+// @return {Color}
+@function get-hover-color($color) {
+  @return mix(black, $color, 20%);
+}
+
+@function get-state-color($color, $state: 'hover') {
+    @if $state == 'hover' {
+        @return mix(black, $color, 20%);
+    } 
+    @else if $state == 'active' {
+        @return mix(black, $color, 36%);
+    }
+}

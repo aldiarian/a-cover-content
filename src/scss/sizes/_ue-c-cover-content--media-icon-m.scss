@@ -1,0 +1,14 @@
+// **********************************************
+// Cover content media icon MEDIUM size
+// **********************************************
+
+@mixin ue-c-cover-content--media-icon-m($displayFrom: phablet) {
+    .ue-c-cover-content--media-icon-m-from-#{$displayFrom} {
+        @include mq($from: $displayFrom) {
+            .ue-c-cover-content__media-icon {
+                width: get-cover-content-media-icon-size(medium);
+                height: get-cover-content-media-icon-size(medium);
+            }
+        }
+    }
+}

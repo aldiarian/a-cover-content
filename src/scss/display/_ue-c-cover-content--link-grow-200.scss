@@ -1,0 +1,28 @@
+// **********************************************
+// When a content cover media display on the right taking half of the space and the comments are absoluted positioned,
+// you may want the comments to stay in the cover-content__main area but still, all the cover article has to be clickable
+// **********************************************
+
+@mixin ue-c-cover-content--link-grow-200($displayFrom: desktop) {
+    @if $ue-c-cover-content-comments-absolute {
+        @each $mediaq, $value in $displayFrom {
+            @include mq($mediaq) {
+                .ue-c-cover-content--link-grow-200-from-#{$mediaq} {
+                    &.has-image {
+                        .ue-c-cover-content {
+                            &__main {
+                                position: relative;
+                            }
+                            &__link {
+                                &:after {
+                                    width: 200%;
+                                    right: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+// **********************************************
+// Cover content media takes 1 quarter of the space
+// **********************************************
+@mixin ue-c-cover-content--media1of4($displayFrom: mobile) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--media1of4-from-#{$mediaq} {
+                .ue-c-cover-content {
+                    &__media {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+    }
+}

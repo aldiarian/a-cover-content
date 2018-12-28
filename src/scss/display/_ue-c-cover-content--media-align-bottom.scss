@@ -1,0 +1,17 @@
+// **********************************************
+// Cover content media align bottom
+// **********************************************
+@mixin ue-c-cover-content--media-align-bottom($displayFrom: phablet) {
+    @each $mediaq, $value in $displayFrom {
+        .ue-c-cover-content--media-align-bottom-from-#{$mediaq} {
+            @include mq($mediaq) {
+                .ue-c-cover-content {
+                    &__media {
+                        display: flex;
+                        align-items: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}

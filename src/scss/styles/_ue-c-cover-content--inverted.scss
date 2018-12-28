@@ -1,0 +1,43 @@
+@mixin ue-c-cover-content--inverted {
+    .ue-c-cover-content--inverted {
+        background: get-property($ue-c-cover-content-inverted, body, background-color);
+        .ue-c-cover-content {
+            
+            &__link {
+                &:link,
+                &:visited {
+                    color: get-property($ue-c-cover-content-inverted, headline, color);
+                }
+                @include mq($from: tablet) {
+                    &:visited {
+                        color: $ue-c-cover-content-link-color-visited-light;
+                    }
+                }
+                &:hover,
+                &:active {
+                    color: get-property($ue-c-cover-content-inverted, headline, color-hover);
+                    text-decoration: underline;
+                    .ue-c-cover-content__kicker {
+                        color: get-property($ue-c-cover-content-inverted, kicker, color-hover);
+                        text-decoration: underline;
+                    }
+                }
+            }
+            &__kicker {
+                color: get-property($ue-c-cover-content-inverted, kicker, color);
+            }
+            &__aboveheadline {
+                color: get-property($ue-c-cover-content-inverted, aboveheadline, color);
+            }
+            &__standfirst {
+                color: get-property($ue-c-cover-content-inverted, standfirst, color);
+            }
+            &__byline-item {
+                color: get-property($ue-c-cover-content-inverted, byline-item, color);
+            }
+            &__byline-location {
+                color: get-property($ue-c-cover-content-inverted, byline-location, color);
+            }
+        }
+    }
+}

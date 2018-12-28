@@ -1,0 +1,17 @@
+$ue-c-cover-content-kicker-position: 1;
+$ue-c-cover-content-horizontal-direction: row;
+$ue-c-cover-content-comments-absolute: true;
+
+$ue-c-cover-content-horizontal-direction-row: true;
+$ue-c-cover-content-background: true ;
+
+$ue-c-cover-content--boxed-content: false ;
+
+$ue-c-cover-content-border: (
+    top: (border-width: 1px, border-style: solid, border-color: #289cb3, create: true),
+    bottom: (border-width: 1px, border-style: solid, border-color: #a1a1a1, create: true)
+);
+
+body {
+    margin: 0;
+}

@@ -1,0 +1,224 @@
+// =======================================================
+// Variables to define the styles of the cover content
+// =======================================================
+
+$ue-c-cover-content-caption-background-color: #e2eae4 !default;
+$ue-c-cover-content-focus-outline-styles: 2px dotted #811d15 !important;
+$ue-c-cover-content-selection-background: yellow !default;
+$ue-c-cover-content-link-color-visited: purple !default;
+$ue-c-cover-content-link-color-visited-light: pink !default;
+// ====================================================
+// Related links
+// ====================================================
+$ue-c-cover-content-related-links-border: true !default;
+$ue-c-cover-content-related-links-border-top-styles: 1px solid #bfbfbf !default;
+$ue-c-cover-content-related-links-border-width: 100px;
+
+// =======================================================
+// Kicker position
+// 0: positioned inside the content area
+// 1: as part of the headline
+// =======================================================
+$ue-c-cover-content-kicker-position: 0 !default;
+
+// =======================================================
+// Comments position absolute
+// true: comments are absolute and stay in the bottom right corner of the main area
+// false: comments displays in the meta container
+// =======================================================
+$ue-c-cover-content-comments-absolute: false !default;
+
+$ue-c-cover-content-comments-absolute-background: #e3e4e8 !default;
+
+
+// =======================================================
+// Default order for displaying the media and the content of a cover-content
+// true: the horizontal direction is row - media/content
+// false: the horizontal direction is row-reverse - content/media
+// =======================================================
+$ue-c-cover-content-horizontal-direction-row: true !default;
+
+
+
+// =======================================================
+// Background of the content cover
+// =======================================================
+$ue-c-cover-content-background: false !default;
+$ue-c-cover-content-background-color: white !default;
+
+
+// =======================================================
+// Values to determine the space between element inside the cover content
+// =======================================================
+$ue-c-cover-content--boxed-content: false !default;
+$ue-c-cover-content-gutter-scale: (
+    mobile:             (gutter: 10, create: true),
+    mobileMedium:       (gutter: 10, create: false),
+    mobileLandscape:    (gutter: 10, create: false),
+    phablet:            (gutter: 12, create: false),
+    tablet:             (gutter: 12, create: false),
+    desktop:            (gutter: 15, create: false),
+    leftCol:            (gutter: 20, create: false),
+    wide:               (gutter: 20, create: false)
+) !default;
+
+// =======================================================
+// This has to be the same value of hte separation of the gird-layout
+// =======================================================
+$ue-c-cover-content-grid-gutter: 10px !default;
+
+// =======================================================
+// Values to determine if the cover-content has border-top and border-bottom
+// If they do, define the width, style and color
+// =======================================================
+$ue-c-cover-content-border: (
+    top: (border-width: 1px, border-style: solid, border-color: gray, create: false),
+    bottom: (border-width: 1px, border-style: solid, border-color: gray, create: false)
+)!default;
+
+
+
+// =======================================================
+// Variables to define font-family, font-weight, color and hover-color
+// for all the elements of the cover contents that applies
+// =======================================================
+$demo-font-one: Arial, Helvetica, sans-serif;
+$demo-font-two: Arial, Helvetica, sans-serif;
+
+$ue-c-cover-content-font-family: (
+    headline: (font-family: $demo-font-one, font-weight: bold, color:#757575, color-hover: blue),
+    kicker: (font-family: $demo-font-two, font-weight: normal, color: #000, color-hover: blue),
+    aboveheadline: (font-family: $demo-font-two, font-weight: normal, color: #000),
+    byline: (font-family: $demo-font-two, font-weight: normal, color: #000),
+    bylineLocation: (font-family: $demo-font-two, font-weight: normal, color: #000),
+    bylineRole: (font-family: $demo-font-two, font-weight: normal, color: #000),
+    publishedDate: (font-family: $demo-font-two, font-weight: normal, color: #000, color-hover: blue),
+    standfirst: (font-family: $demo-font-one, font-weight: normal, color: #000, color-hover: blue),
+    figureCaptionDescription: (font-family: $demo-font-two, font-weight: normal, color: #000, color-hover: blue),
+    figureCaptionSource: (font-family: $demo-font-two, font-weight: normal, color: black, color-hover: blue),
+    comments:(font-family: $demo-font-two, font-weight: normal, color: #000, color-hover: blue),
+    relatedLinks:(font-family: $demo-font-two, font-weight: normal, color: #2E6D9D),
+    relatedLinksKicker:(font-family: $demo-font-two, font-weight: bold, color: black)
+) !default;
+
+
+// =======================================================
+// Variables to define the font-size, line-height and letter-spacing
+// for all the elements of the cover contents that applies
+// =======================================================
+$ue-c-cover-content-font-scale: (
+    headline: (
+        3xs: (font-size: 11, line-height: 12, letter-spacing: 0),
+        xxs: (font-size: 14, line-height: 16, letter-spacing: 0),
+        xs:  (font-size: 16, line-height: 18, letter-spacing: 0),
+        s:   (font-size: 18, line-height: 20, letter-spacing: 0),
+        m:   (font-size: 20, line-height: 22, letter-spacing: 0),
+        l:   (font-size: 23, line-height: 26, letter-spacing: 0),
+        xl:  (font-size: 26, line-height: 29, letter-spacing: 0),
+        xxl: (font-size: 30, line-height: 31, letter-spacing: 0),
+        3xl: (font-size: 40, line-height: 41, letter-spacing: 0),
+        4xl: (font-size: 50, line-height: 49, letter-spacing: 0)
+    ),
+    figureCaption: (
+        s: (font-size: 13, line-height: 10, letter-spacing: 0),
+        m: (font-size: 16, line-height: 17, letter-spacing: 0),
+        l: (font-size: 18, line-height: 19, letter-spacing: 0)
+    ),
+    kicker: (
+        s: (font-size: 14, line-height: 18, letter-spacing: 0),
+        m: (font-size: 16, line-height: 20, letter-spacing: 0),
+        l: (font-size: 20, line-height: 24, letter-spacing: 0)
+    ),
+    aboveheadline: (
+        s: (font-size: 14, line-height: 22, letter-spacing: 0),
+        m: (font-size: 16, line-height: 24, letter-spacing: 0),
+        l: (font-size: 18, line-height: 28, letter-spacing: 0)
+    ),
+    byline: (
+        s: (font-size: 10, line-height: 11, letter-spacing: 0),
+        m: (font-size: 12, line-height: 13, letter-spacing: 0),
+        l: (font-size: 14, line-height: 14, letter-spacing: 0)
+    ),
+    publishedDate: (
+        s: (font-size: 10, line-height: 11, letter-spacing: 0),
+        m: (font-size: 12, line-height: 13, letter-spacing: 0),
+        l: (font-size: 14, line-height: 14, letter-spacing: 0)
+    ),
+    standfirst:(
+        s: (font-size: 15, line-height: 17, letter-spacing: 0),
+        m: (font-size: 16, line-height: 18, letter-spacing: 0),
+        l: (font-size: 16, line-height: 18, letter-spacing: 0)
+    ),
+    metaInfo:(
+        s: (font-size: 10, line-height: 11, letter-spacing: 0),
+        m: (font-size: 16, line-height: 18, letter-spacing: 0),
+        l: (font-size: 16, line-height: 18, letter-spacing: 0)
+    ),
+    comments:(
+        s: (font-size: 10, line-height: 11, letter-spacing: 0),
+        m: (font-size: 16, line-height: 18, letter-spacing: 0),
+        l: (font-size: 16, line-height: 18, letter-spacing: 0)
+    ),
+    relatedLinks:(
+        s: (font-size: 14, line-height: 16, letter-spacing: 0),
+        m: (font-size: 16, line-height: 18, letter-spacing: 0),
+        l: (font-size: 16, line-height: 18, letter-spacing: 0)
+    )
+) !default;
+
+// =======================================================
+// Variables for the media icon size
+// =======================================================
+$ue-c-cover-content-media-icon-size: (
+    small: (width: 40px),
+    medium: (width: 60px),
+    large: (width: 80px)
+) !default;
+
+
+
+// =======================================================
+// Variables for the opinion styles
+// =======================================================
+$ue-c-cover-content-opinion: (
+    body: (background-color: whitesmoke, background-color-in-block: red, color: black),
+    link: (color: black, color-hover: blue)
+
+) !default;
+$ue-c-cover-content-opinion-background: true !default;
+$ue-c-cover-content-opinion-font-style: italic !default;
+
+// =======================================================
+// Variables for the branded styles
+// =======================================================
+$ue-c-cover-content-branded-background-color: gray !default;
+$ue-c-cover-content-branded-font-color: black !default;
+$ue-c-cover-content-branded-font-color-hover: blue !default;
+$ue-c-cover-content-branded--kicker-font-color: black !default;
+$ue-c-cover-content-branded-border: (
+    top: (border-width: 1px, border-style: solid, border-color: gray, create: false),
+    bottom: (border-width: 1px, border-style: solid, border-color: gray, create: false)
+)!default;
+
+
+// =======================================================
+// Variables for the inverted styles
+// =======================================================
+$ue-c-cover-content-inverted: (
+    body: (background-color: black),
+    headline: (color: white, color-hover: whitesmoke),
+    kicker: (color: whitesmoke, color-hover: whitesmoke),
+    aboveheadline: (color: white),
+    standfirst: (color: white),
+    byline-item: (color: white),
+    byline-location: (color: white)
+) !default;
+
+
+/*
+*
+*   metainfo usually same as byline, the thing is to determine where is a difference, ex: comments / section / publish-date
+*
+*/
+
+

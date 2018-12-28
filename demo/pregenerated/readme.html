@@ -1,0 +1,383 @@
+<h1 id="ue-c-cover-content">ue-c-cover-content</h1>
+<p>An <code>ue-c-cover-content</code> is a fragment of a type of content that links to the complete content. (ex: an article, a photo album, a video)</p>
+<h2 id="install-as-a-dependency">Install as a dependency</h2>
+<pre><code>npm install -D git+ssh://git@gitlab.internet.int:fronts/ue-c-cover-content.git#{tagNumber}</code></pre><h2 id="how-to-import-the-styles">How to import the styles</h2>
+<p>Import the <code>ue-l-cover-content</code> main.scss file into your project</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@import</span> <span class="token string">'~/ue-c-cover-content/scss/main'</span><span class="token punctuation">;</span></code></pre>
+<p>This will make all the conver-content styles avaiable to your project but will not generate any code unless you make use of its mixins</p>
+<h3 id="import-the-compoenent-and-its-variators">Import the compoenent and its variators</h3>
+<pre class="language-scss"><code class="language-scss"><span class="token comment">// Your scss file example</span>
+
+<span class="token comment">// In this file you will redefine all the scss default variables of the conver-content</span>
+<span class="token keyword">@import</span> <span class="token string">'your-variables-redefinition-file'</span><span class="token punctuation">;</span>
+<span class="token comment">// This will make all the conver-content mixins avible</span>
+<span class="token keyword">@import</span> <span class="token string">'~/ue-c-cover-content/scss/main'</span><span class="token punctuation">;</span>
+
+<span class="token comment">//this will import the defaults styles of the cover-content</span>
+<span class="token keyword">@include</span> ue-c-cover-content<span class="token punctuation">;</span>
+
+<span class="token comment">//here you include all the cover-content variations that you need</span>
+
+<span class="token comment">// Display variations:</span>
+<span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--media2of3</span><span class="token punctuation">(</span>tablet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--media1of2</span><span class="token punctuation">(</span>tablet<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+<span class="token comment">// Size variations:</span>
+<span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--m</span><span class="token punctuation">(</span>tablet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--xxl</span><span class="token punctuation">(</span>tablet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--3xl</span><span class="token punctuation">(</span>tablet<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="overview-of-the-conver-content">Overview of the conver-content</h2>
+<p><img src="docs/img/06.png" alt="alt text" title="Grid example"> </p>
+<h2 id="elements">Elements</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ue-c-cover-content__figure</td>
+<td>the figure of an article, the area that contain de image and its caption</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__image</td>
+<td>the image of an article (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__media-description</td>
+<td>text thats describe the image (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__media-source</td>
+<td>the author of the image (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__kicker</td>
+<td>A small text (1 to 3 words)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__aboveheadline</td>
+<td>A text thats gives support to the headline</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__headline</td>
+<td>the headline</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__link</td>
+<td>the full content url</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__byline-list</td>
+<td>a list of one or more content authors (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__byline-name</td>
+<td>the name of the content author (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__byline-role</td>
+<td>the role of the content author (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__byline-location</td>
+<td>the location of the content author (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__comments</td>
+<td>the number of comments of the article (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__standfirst</td>
+<td>a text that describes more abour the article, no more than a small pharagraph (optional)</td>
+</tr>
+<tr>
+<td>ue-c-cover-content__related-links</td>
+<td>one or more links to related contents (title / url)</td>
+</tr>
+<tr>
+<td>Kicker url</td>
+<td>url (optional)</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>the date of the article last publication (optional)</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>the time of the article last publication (optional)</td>
+</tr>
+<tr>
+<td>Share</td>
+<td>list of social networks where the article can be shared (optional)</td>
+</tr>
+</tbody></table>
+<h2 id="areas">Areas</h2>
+<p>For layout propurse, the <code>ue-c-cover-content</code> has the following areas to display the before mentioned elements:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        [[area]]
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__media<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            [[area]]
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            [[area]]
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__list-inline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                [[area]]
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__meta<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    [[area]]
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        [[area]]
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Now with some elements</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__media<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__figure<span class="token punctuation">"</span></span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>image<span class="token punctuation">'</span></span> <span class="token attr-name">itemscope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span><span class="token punctuation">'</span></span> <span class="token attr-name">itemtype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>http://schema.org/ImageObject<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__image<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__caption<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__media-description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Media description<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__media-source<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Media Source<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__aboveheadline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aboveheadline text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__headline-group<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__link<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#articleURL<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__kicker<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Kicker text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__headline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>A headlline text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__list-inline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__byline-list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__byline-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__byline-name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Author Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__byline-role<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Author role<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__byline-location<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>location<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__meta<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__meta-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#comentarios<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__comments<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>50<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>is-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>comentarios<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__standfirst<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>standfirst pharagraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__related-links<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Noticias relacionadas<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#relatedlinksurl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Related link title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="variables">Variables</h2>
+<p><strong><code>$ue-c-cover-content-kicker-position</code></strong> the kicker position can be styled different depending on its position in the HTML</p>
+<pre><code>- value `0 (default)`: Define the kicker as an element of the content_main area
+- value `1`: Define if the kicker as part of the headline_group</code></pre><p>For more information see the HTML variations <a href="#html-variations">below</a>
+<img src="docs/img/01.png" alt="alt text" title="kicker examples">  </p>
+<p><strong><code>$ue-c-cover-content-comments-absolute</code></strong> set the comments to absoluted positioned inside the <code>ue-c-cover-content__main</code></p>
+<pre><code>- value `false (default)`: The comments element will styles as part of the `content_meta` area
+- value `true`: The comments element will styles as part of the `content_main` area</code></pre><p>For more information see the HTML variations <a href="#html-variations">below</a>
+<img src="docs/img/02.png" alt="alt text" title="comments example"></p>
+<p><strong><code>$ue-c-cover-content-horizontal-direction-row</code></strong> its changes the direction of the main and content areas</p>
+<pre><code>- value `false (default)`: the default display will be content/media
+- value `true`: the default display will be media/content</code></pre><p><img src="docs/img/05.png" alt="alt text" title="display examples"></p>
+<p><strong><code>$ue-c-cover-content--boxed-content</code></strong> its gives some space to the content_main area</p>
+<pre><code>- value `false (default)`: its gives some separation between the media and the content
+- value `true`: its gives some separation in the top/left/bottom/right of the `cover-content_main` area</code></pre><p><img src="docs/img/03.png" alt="alt text" title="display examples"></p>
+<p><strong><code>$ue-c-cover-content-background-color</code></strong> define a background color
+<img src="docs/img/04.png" alt="alt text" title="display examples"></p>
+<p><strong><code>$ue-c-cover-content-font-family</code></strong> A map variable to define the font-family, font-weight, color and color-hover of the different elements</p>
+<p><strong><code>$ue-c-cover-content-font-scale</code></strong> A map variable to define the font-size, line-height and letter-spacing for all the predefined sizes of all elements</p>
+<p><strong><code>$ue-c-cover-content-gutter-scale</code></strong> A map variable to define space between elements</p>
+<h2 id="cover-content-modificators-"><strong><code>cover-content</code> modificators:</strong></h2>
+<ul>
+<li><h3 id="by-size-">By Size:</h3>
+<p>  If you want to include any of these modifiers, you need to include the mixin and specify the media querie where you want the modifier to start to take effect:</p>
+<pre class="language-scss"><code class="language-scss">  <span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--xxl</span><span class="token punctuation">(</span>mobile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--3xl</span><span class="token punctuation">(</span>desktop<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>  this will create the following css:</p>
+<pre class="language-css"><code class="language-css">  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 320px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+      <span class="token selector">.ue-c-cover-content--xxl-from-mobile</span> <span class="token punctuation">{</span>
+          <span class="token selector">.ue-c-cover-content__headline-group</span> <span class="token punctuation">{</span>
+              <span class="token property">font-size</span><span class="token punctuation">:</span> 35px<span class="token punctuation">;</span>
+              ...
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 890px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+      <span class="token selector">.ue-c-cover-content--3xl-from-desktop</span> <span class="token punctuation">{</span>
+          <span class="token selector">.ue-c-cover-content__headline-group</span> <span class="token punctuation">{</span>
+              <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+              ...
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>  How to use it:</p>
+<pre class="language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content ue-c-cover-content--xxl-from-mobile ue-c-cover-content--3xl-from-desktop<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>  Aviable modifiers:
+  Name |<br>  -- |
+  <code>ue-c-cover-content--4xl</code> |
+  <code>ue-c-cover-content--3xl</code> |
+  <code>ue-c-cover-content--xxl</code> |
+  <code>ue-c-cover-content--xl</code> |
+  <code>ue-c-cover-content--l</code> |
+  <code>ue-c-cover-content--m</code> |
+  <code>ue-c-cover-content--s</code> |
+  <code>ue-c-cover-content--xs</code> |
+  <code>ue-c-cover-content--xxs</code> |
+  <code>ue-c-cover-content--3xs</code> |</p>
+</li>
+</ul>
+<ul>
+<li><h3 id="by-display-layout-">By Display (layout):</h3>
+<p>  If you want to include any of these modifiers, you need to include the mixin and specify the media querie where you want the modifier to start to take effect:</p>
+<pre class="language-scss"><code class="language-scss">  <span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--media1of2-left</span><span class="token punctuation">(</span>tablet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">@include</span> <span class="token function">ue-c-cover-content--vertical</span><span class="token punctuation">(</span>mobile<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>  this will create the following css:</p>
+<pre class="language-css"><code class="language-css">  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 740px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+      <span class="token selector">.ue-c-cover-content--media1of2-left-from-tablet</span> <span class="token punctuation">{</span>
+          <span class="token selector">.ue-c-cover-content__body</span> <span class="token punctuation">{</span>
+              <span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token selector">.ue-c-cover-content__media</span> <span class="token punctuation">{</span>
+              <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 320px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+      <span class="token selector">.ue-c-cover-content--vertical-from-mobile</span> <span class="token punctuation">{</span>
+          <span class="token selector">.ue-c-cover-content__body</span> <span class="token punctuation">{</span>
+              <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>  How to use it:</p>
+<pre class="language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content ue-c-cover-content---vertical-from-mobile ue-c-cover-content--media1of2-left-from-tablet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>  Aviable display modifiers:
+  Name  | Description<br>  --|--
+  <code>ue-c-cover-content--2cols-related-links</code> | Show the related links in two columns
+  <code>ue-c-cover-content--3cols-related-links</code> | Show the related links in three columns
+  <code>ue-c-cover-content--hasimage-1col-related-links</code> | If the cover content has image, show related links in one column
+  <code>ue-c-cover-content--footer-left</code> | Set the footer with position abolute and left 0
+  <code>ue-c-cover-content--footer-right</code> |  Set the footer with position abolute and right 0
+  <code>ue-c-cover-content--footer1of2</code> |  Set the footer width to 50%
+  <code>ue-c-cover-content--footer1of3</code> |  Set the footer width to 100%/3
+  <code>ue-c-cover-content--kicker-left</code>  | Set the kicker to position absolute in the top/left corner (only if .has-image exists)
+  <code>ue-c-cover-content--kicker-right</code> |  Set the kicker to position absolute in the top/right corner (only if .has-image exists)
+  <code>ue-c-cover-content--link-grow-200</code> |  To set the link ::after pseudo element grow 200%
+  <code>ue-c-cover-content--link-grow-300</code> |  To set the link ::after pseudo element grow 300%
+  <code>ue-c-cover-content--media-left</code> |  Show the image in the left
+  <code>ue-c-cover-content--media-right</code> |  Show the image in the right
+  <code>ue-c-cover-content--media1of2</code> |  set the image width to 50%
+  <code>ue-c-cover-content--media2of3</code> |  set the image width to 100% /3 * 2
+  <code>ue-c-cover-content--vertical-reverse</code> |  Show the content above the image
+  <code>ue-c-cover-content--vertical</code> |  Show the content below the image</p>
+</li>
+<li><h3 id="by-styles-">By Styles:</h3>
+<p>  A cover article can be modified by styles, colors, etc.
+  Aviable display modifiers:
+  Name |<br>  -- |
+  is--highlighted |
+  is--special |
+  is--opinion |
+  is--gallery |
+  is--video |
+  is--premuim |
+  is--graph |</p>
+</li>
+</ul>
+<h3 id="other-modificator">Other modificator</h3>
+<ul>
+<li>has-image</li>
+<li>has-comments</li>
+<li>has-related-links </li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content ue-c-cover-content--highlighted<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Any of these categories (<strong>Size</strong>, <strong>display</strong> and <strong>styles</strong>) can be combined </p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content ue-c-cover-content--xxl-from-mobile ue-c-cover-content--3xl-from-tablet ue-c-cover-content--vertical-reverse-from-mobile ue-c-cover-content--media2of3-from-phablet ue-c-cover-content--link-grow-300-from-desktop ue-c-cover-content--media-right-from-phablet ue-c-cover-content--footer1of3-from-desktop ue-c-cover-content--footer-left-from-desktop  has-image<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="-a-id-html-variations-a-html-variations"><a id="html-variations"></a> HTML variations</h2>
+<p>The <code>cover-content</code> can vary the way its show some of the elements, they can me moved from one area to another:</p>
+<ul>
+<li><strong>Kicker</strong><ul>
+<li>kicker as an independent element in the content_main area:<pre class="language-html"><code class="language-html">  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__kicker<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Kicker text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  ...</code></pre>
+</li>
+<li>kicker in headline: The kicker is showed as part of the Headline-group<pre class="language-html"><code class="language-html">  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__headline-group<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__kicker<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>kicker text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__headline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Headline text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  ...</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Comments</strong><ul>
+<li>Comments as an element in the list inline area:<pre class="language-html"><code class="language-html">  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      ...
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__list-inline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+          ...
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__meta<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__meta-item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#comentarios<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__comments<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>50<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>is-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>comentarios<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+      ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  ...</code></pre>
+</li>
+<li>Comments as an element in the content_main area<pre class="language-html"><code class="language-html">  ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      ...
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__standfirst<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>standfirst pharagraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#comentarios<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ue-c-cover-content__comments<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>50<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>is-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>comentarios<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  ...</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="other-components-that-can-be-shown-inside-the-ue-c-cover-content-">Other components that can be shown inside the <code>ue-c-cover-content</code>:</h2>
+<p>You can drop any component youd like as long as you drop it inside a defined area. The components must manage its own styles and must not be dependent on the <code>ue-c-cover-content</code> to behave accordinagly.</p>
+<ul>
+<li>ue-c-scoreboard-dual</li>
+<li>ue-c-scoreboard-multiple</li>
+<li>ue-c-star-ranking</li>
+<li>ue-c-ibex-module</li>
+</ul>

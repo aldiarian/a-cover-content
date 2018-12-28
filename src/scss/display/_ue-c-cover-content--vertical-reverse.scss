@@ -1,0 +1,26 @@
+@mixin ue-c-cover-content--vertical-reverse ($displayFrom: phablet) {
+    @each $mediaq, $value in $displayFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--vertical-reverse-from-#{$mediaq} {
+                .ue-c-cover-content {
+                    &__body {
+                        flex-direction: column-reverse;
+                    }
+                    &__media {
+                        width: 100%;
+                        height: auto;
+                    }
+                    &__main {
+                        width: 100%;
+                        @if $ue-c-cover-content--boxed-content {
+                            padding-bottom: get-cover-content-gutter(mobile);
+                        }
+                        @else  {
+                            padding : 0 0 get-cover-content-gutter(mobile) 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

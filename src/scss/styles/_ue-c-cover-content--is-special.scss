@@ -1,0 +1,13 @@
+@mixin ue-c-cover-content--is-special {
+    .ue-c-cover-content--is-special {
+        background: #d8d9de;
+        .ue-c-cover-content {
+            &__kicker {
+                color: white;
+            }
+            &__comments {
+                display: none;
+            }
+        }
+    }
+}

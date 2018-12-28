@@ -1,0 +1,26 @@
+{
+    "name": "ue-c-cover-content",
+    "version": "1.0.0",
+    "description": "styles and html of the ue-c-cover-content.",
+    "main": "index.js",
+    "demoComponent": "demo/assets/templates/demoComponentTemplate.hbs",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "NODE_ENV=\"development\" webpack-dev-server --config node_modules/styles-component-common-deps/webpack.config.js --open --host 0.0.0.0 --env.target demo",
+        "build:demo": "NODE_ENV=\"development\" webpack --config node_modules/styles-component-common-deps/webpack.config.js --env.target demo",
+        "build:dev": "NODE_ENV=\"development\" webpack --config node_modules/styles-component-common-deps/webpack.config.js --env.target deploy",
+        "build:sta": "NODE_ENV=\"staging\" webpack --config node_modules/styles-component-common-deps/webpack.config.js --env.target deploy",
+        "build:pro": "NODE_ENV=\"production\" webpack --config node_modules/styles-component-common-deps/webpack.config.js --optimize-minimize --env.target deploy",
+        "deploy": "./deploy/run.sh"
+    },
+    "keywords": [
+        "ue-c-cover-content",
+        "styles",
+        "component"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "styles-component-common-deps": "git+ssh://git@gitlab.internet.int:fronts/styles-component-common-deps.git#v1.0.1"
+    }
+}

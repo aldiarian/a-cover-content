@@ -1,0 +1,15 @@
+@mixin ue-c-cover-content--xl($sizeFrom: mobile) {
+     @each $mediaq, $value in $sizeFrom {
+        @include mq($mediaq) {
+            .ue-c-cover-content--xl-from-#{$mediaq} {
+                .ue-c-cover-content {
+                    &__headline-group {
+                        font-size:  get-font-size($ue-c-cover-content-font-scale, headline, xl);
+                        line-height: get-line-height($ue-c-cover-content-font-scale, headline, xl);
+                        letter-spacing: get-letter-spacing($ue-c-cover-content-font-scale, headline, xl);
+                    }
+                }
+            }
+        }
+    }
+}
